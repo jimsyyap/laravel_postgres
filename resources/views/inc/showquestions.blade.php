@@ -20,6 +20,16 @@
                                     </p>
                                 </h3>
                                 {{ str_limit($question->body, 250) }}
+                                <div>
+                                    {{-- if user auth, show editbutton, else no edit --}}
+                                    {{-- @can('update', $question) --}}
+                                        <p>
+                                            <a href="{{ route('questions.edit', $question->id) }}">
+                                                Edit
+                                            </a>
+                                        </p>
+                                    {{-- @endcan --}}
+                                </div>
                             </div>
                         </div>
                         <hr>

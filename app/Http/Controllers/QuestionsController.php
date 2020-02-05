@@ -61,14 +61,19 @@ class QuestionsController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function edit(Question $question)
-    {
-        //
+    public function edit(Question $question){
+        return view('questions.edit', compact('question'));
     }
+    /*
+     * or...
+    public function edit($id)
+    {
+        $question = Question::findOrFail($id)
+    }
+     */
 
     /**
      * Update the specified resource in storage.
@@ -77,9 +82,10 @@ class QuestionsController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Question $question)
+    public function update(AskQuestionRequest $request, Question $question)
     {
-        //
+        $question -> update($request -> only('title', 'body'));
+        return redirect('/questions') -> with('success', 'Question was updated');
     }
 
     /**
