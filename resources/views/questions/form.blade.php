@@ -22,8 +22,3 @@
                             @endif
                         </div>
 
-                        <div class="form-group">
-                            <button class="btn btn-outline-primary" type="submit">
-                                {{ $buttonText }}
-                            </button>
-                        </div>

@@ -13,17 +13,30 @@
                         </div>
                     </div>
                 </div>
+
+                {{-- update delete buttons --}}
                 <div class="card-body">
-                        <form action="{{ route('questions.update', $question->id) }}" method="POST">
-                            @method('PUT')
+                    <form method="POST" action="{{ route('questions.update', $question->id) }}">
+                        @method('PUT')
                             {{-- or {{ method_field('PUT') }} --}}
-                            @include('questions.form', ['buttonText' => "Update Question"])
+                        @include('questions.form')
+                    </form>
+                    <div class="d-flex align-items-center">
+
+                        <form class="form-delete">
+                            <button class="btn btn-outline-primary" type="submit">
+                                Update Question
+                            </button>
                         </form>
-                        <form method="POST" action="{{ route('questions.destroy', $question->id) }}">
+                        <p>&nbsp;</p>
+                        <form class="form-delete ml-auto" method="POST" action="{{ route('questions.destroy', $question->id) }}">
                             @method('DELETE')
                             @csrf
-                            <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                            <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')">
+                                Delete
+                            </button>
                         </form>
+                    </div>
                 </div>
 
             </div>
