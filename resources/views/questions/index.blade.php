@@ -15,6 +15,7 @@
                 </div>
 
                 <div class="card-body">
+                    @include('layouts.messages')
                     @include('inc.showquestions')
                 </div>
             </div>
