@@ -1,6 +1,7 @@
 
                     @foreach ($questions as $question)
                         <div class="media">
+                            @include('inc.votes')
                             <div class="media-body">
                                 <h3>
                                     <a href="{{ $question -> url }}">
