@@ -8,17 +8,7 @@
                 <div class="card-header">All Questions</div>
 
                 <div class="card-body">
-                    @foreach ($questions as $question)
-                        <div class="media">
-                            <div class="media-body">
-                                <h3>{{ $question->title }}</h3>
-                                {{ str_limit($question->body, 250) }}
-                            </div>
-                        </div>
-                        <hr>
-                    @endforeach
-
-                    {{ $questions ->links() }}
+                    @include('inc.showquestions')
                 </div>
             </div>
         </div>
