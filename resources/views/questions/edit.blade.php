@@ -29,13 +29,15 @@
                             </button>
                         </form>
                         <p>&nbsp;</p>
-                        <form class="form-delete ml-auto" method="POST" action="{{ route('questions.destroy', $question->id) }}">
-                            @method('DELETE')
-                            @csrf
-                            <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')">
-                                Delete
-                            </button>
-                        </form>
+                        @can('delete', $question)
+                            <form class="form-delete ml-auto" method="POST" action="{{ route('questions.destroy', $question->id) }}">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')">
+                                    Delete
+                                </button>
+                            </form>
+                        @endcan
                     </div>
                 </div>
 
