@@ -31,7 +31,7 @@ class AnswersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Question $question Request $request)
+    public function store(Question $question, Request $request)
     {
         $request -> validate([
             'body' => 'required'
