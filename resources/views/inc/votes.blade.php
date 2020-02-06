@@ -8,9 +8,9 @@
                                 </div>
                                 <div class="status {{ $question -> status }}">
                                     <strong class='px-1'>
-                                        {{ $question -> answers }} 
+                                        {{ $question -> answers_count }} 
                                     </strong>
-                                    <small>{{ str_plural('answer', $question -> answers) }}</small>
+                                    <small>{{ str_plural('answer', $question -> answers_count) }}</small>
                                 </div>
                                 <div class="view">
                                     {{ $question -> views . " " . str_plural('view', $question -> views) }}
