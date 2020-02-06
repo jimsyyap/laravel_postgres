@@ -10964,3 +10964,73 @@ form.form-delete {
   display: inline;
 }
 
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: black;
+  content: "/\A0";
+}
+
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+.vote-controls {
+  min-width: 60px;
+  margin-right: 30px;
+  text-align: center;
+  color: #495057;
+}
+
+.vote-controls .vote-up {
+  color: #38c172;
+}
+
+.vote-controls span,
+.vote-controls a {
+  display: block;
+}
+
+.vote-controls span.votes-count {
+  font-size: 25px;
+}
+
+.vote-controls span.favorites-count {
+  font-size: 12px;
+}
+
+.vote-controls a {
+  cursor: pointer;
+  color: #6c757d;
+}
+
+.vote-controls a.off,
+.vote-controls a.off:hover {
+  color: #adb5bd;
+}
+
+.vote-controls a.favorite.favorited,
+.vote-controls a.favorite.favorited:hover {
+  color: #f6993f;
+}
+
+.vote-controls.vote-accepted {
+  color: #38c172;
+}
+
