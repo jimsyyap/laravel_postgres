@@ -59,7 +59,6 @@ class AnswerPolicy
 
     /**
      * Determine whether the user can delete the answer.
-     *
      * @param  \App\User  $user
      * @param  \App\Answer  $answer
      * @return mixed

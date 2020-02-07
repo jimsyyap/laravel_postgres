@@ -4,6 +4,7 @@
         . delivered with uber
 
 ## todo
+    . feb 7, 4.30pm - lesson 42, after click on favorite question star, goes to 404 not found
     . freelancer client management app
         . food trip something
         . subscription model
