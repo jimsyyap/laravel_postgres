@@ -12,11 +12,13 @@ class FavoritesController extends Controller
     }
 
     public function store(Question $question){
-        $question -> favorites() -> attach(auth() -> id);
+        $question -> favorites() -> attach(auth() -> id());
+        //*test dd($question -> favorites());
         return back();
     }
 
     public function destroy(Question $question){
+        // remove relationship record
         $question -> favorites() -> detach(auth() -> id());
         return back();
     }

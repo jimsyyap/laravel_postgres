@@ -5,6 +5,8 @@
 
 ## todo
     . feb 7, 4.30pm - lesson 42, after click on favorite question star, goes to 404 not found
+        . test public function show(Thread $thread) {return view('threads.show', compact(thread))}
+            . from laracast forum
     . freelancer client management app
         . food trip something
         . subscription model
