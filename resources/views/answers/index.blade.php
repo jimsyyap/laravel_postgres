@@ -21,13 +21,31 @@
                                 <a title="This answer was not useful" class="vote-down off" href="">
                                     <i class="fas fa-caret-down fa-4x mb-3"></i>
                                 </a>
-                                <a title="Click to select as best answer, click again to undo" class="vote-accepted" href="">
-                                    <i class="fas fa-check fa-2x"></i>
-                                    <span class="favorites-count">
-                                        123
-                                    </span>
-                                </a>
+
+                                {{-- best answer --}}
+                                @can('accept', $answer)
+                                    <a title="Click to select as best answer, click again to undo" class="{{ $answer -> status }}" href="" onclick="event.preventDefault(); document.getElementById('accept-answer-{{ $answer -> id }}').submit();">
+                                        <i class="fas fa-check fa-2x"></i>
+                                        <span class="favorites-count">
+                                            123
+                                        </span>
+                                    </a>
+                                    <form 
+                                        id="accept-answer-{{ $answer -> id }}" 
+                                        action="{{ route('answers.accept', $answer -> id) }}" 
+                                        method="POST" style="display:none">
+                                        @csrf
+                                    </form>
+                                @else
+                                    @if ($answer -> is_best)
+                                        <a title="This answer selected as best" class="{{ $answer -> status }}" href="">
+                                            <i class="fas fa-check fa-2x"></i>
+                                        </a>
+                                    @endif
+                                @endcan
                             </div>
+
+                            {{-- list answers --}}
                             <div class="media-body">
                                 {!! $answer -> body_html !!}
                                 <div class="row">
